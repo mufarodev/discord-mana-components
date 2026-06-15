@@ -1,0 +1,1 @@
+This is an independent, open-source Svelte implementation of the visual concepts found in Discord's Mana design system. It is not affiliated with, sponsored by, or endorsed by Discord, Inc. All Discord trademarks, branding, and designs belong to Discord.
