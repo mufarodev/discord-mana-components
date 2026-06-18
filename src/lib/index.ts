@@ -1,2 +1,3 @@
 export * from './utils';
-export { default as Button } from './components/button/button.svelte';
+export * as Button from './components/button';
+export { Button as ButtonRoot } from './components/button';
