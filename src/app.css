@@ -1,6 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source './**/*.{html,js,svelte,ts}';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+	--color-dm-brand: var(--dm-brand);
+	--color-dm-brand-hover: var(--dm-brand-hover);
+	--color-dm-brand-active: var(--dm-brand-active);
+	--color-dm-brand-accent: var(--dm-brand-accent);
+	--color-dm-bg-primary: var(--dm-bg-primary);
+	--color-dm-bg-secondary: var(--dm-bg-secondary);
+	--color-dm-bg-tertiary: var(--dm-bg-tertiary);
+	--color-dm-bg-accent: var(--dm-bg-accent);
+	--color-dm-bg-input: var(--dm-bg-input);
+	--color-dm-bg-elevated: var(--dm-bg-elevated);
+	--color-dm-mod-muted: var(--dm-mod-muted);
+	--color-dm-mod-normal: var(--dm-mod-normal);
+	--color-dm-mod-strong: var(--dm-mod-strong);
+	--color-dm-text: var(--dm-text);
+	--color-dm-text-strong: var(--dm-text-strong);
+	--color-dm-text-muted: var(--dm-text-muted);
+	--color-dm-text-link: var(--dm-text-link);
+	--color-dm-interactive-normal: var(--dm-interactive-normal);
+	--color-dm-interactive-hover: var(--dm-interactive-hover);
+	--color-dm-interactive-active: var(--dm-interactive-active);
+	--color-dm-border-normal: var(--dm-border-normal);
+	--color-dm-border-subtle: var(--dm-border-subtle);
+	--color-dm-border-strong: var(--dm-border-strong);
+	--color-dm-red: var(--dm-red);
+	--color-dm-red-hover: var(--dm-red-hover);
+	--color-dm-red-active: var(--dm-red-active);
+	--color-dm-green: var(--dm-green);
+	--color-dm-green-hover: var(--dm-green-hover);
+	--color-dm-green-active: var(--dm-green-active);
+	--color-dm-amber: var(--dm-amber);
+	--color-dm-status-online: var(--dm-status-online);
+	--color-dm-status-idle: var(--dm-status-idle);
+	--color-dm-status-dnd: var(--dm-status-dnd);
+	--color-dm-status-offline: var(--dm-status-offline);
+	--color-dm-scrollbar-thumb: var(--dm-scrollbar-thumb);
+	--color-dm-badge: var(--dm-badge);
+	--font-dm-display: var(--dm-font-display);
+	--font-dm-primary: var(--dm-font-primary);
+	--font-dm-code: var(--dm-font-code);
+	--shadow-dm-elevated: inset 0 0 0 1px var(--dm-shadow-outline), 0 8px 16px rgb(0 0 0 / 0.24);
+	--shadow-dm-surface: 0 0 0 1px var(--dm-border-subtle);
+}
 
 @layer base {
 	:root {
