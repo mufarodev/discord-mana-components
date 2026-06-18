@@ -1,3 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--dm-brand: #5966f2;
+		--dm-brand-hover: #4552ba;
+		--dm-brand-active: #3b47a3;
+		--dm-brand-accent: #5966f2;
+		--dm-bg-primary: #fff;
+		--dm-bg-secondary: #fafafa;
+		--dm-bg-tertiary: #f2f2f5;
+		--dm-bg-accent: #6e7078;
+		--dm-bg-input: #f2f3f5;
+		--dm-bg-elevated: #fff;
+		--dm-mod-muted: hsla(240, 4%, 61%, 0.08);
+		--dm-mod-normal: hsla(240, 4%, 61%, 0.16);
+		--dm-mod-strong: hsla(240, 4%, 61%, 0.24);
+		--dm-text: #2e2e33;
+		--dm-text-strong: #29292e;
+		--dm-text-muted: #6b6e75;
+		--dm-text-link: #0073e3;
+		--dm-interactive-normal: #4f5660;
+		--dm-interactive-hover: #2e3338;
+		--dm-interactive-active: #060607;
+		--dm-border-normal: hsla(240, 4%, 61%, 0.36);
+		--dm-border-subtle: hsla(240, 4%, 61%, 0.28);
+		--dm-border-strong: hsla(240, 4%, 61%, 0.48);
+		--dm-shadow-outline: rgb(0 0 0 / 0.1);
+		--dm-red: #d12e38;
+		--dm-red-hover: #a8242e;
+		--dm-red-active: #961c29;
+		--dm-green: #008545;
+		--dm-green-hover: #006b38;
+		--dm-green-active: #005e30;
+		--dm-amber: #ffaa00;
+		--dm-status-online: #24944f;
+		--dm-status-idle: #faab00;
+		--dm-status-dnd: #d12e38;
+		--dm-status-offline: #5e616b;
+		--dm-scrollbar-thumb: #8c8c94;
+		--dm-badge: #d12e38;
+		--dm-font-display: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--dm-font-primary: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--dm-font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", Monaco, monospace;
+	}
+
+	.dark {
+		--dm-brand-accent: #949cf7;
+		--dm-bg-primary: #383b40;
+		--dm-bg-secondary: #333338;
+		--dm-bg-tertiary: #2b2e33;
+		--dm-bg-accent: #40424a;
+		--dm-bg-input: #1e1f22;
+		--dm-bg-elevated: #111214;
+		--dm-mod-muted: hsla(240, 4%, 61%, 0.04);
+		--dm-mod-strong: hsla(240, 4%, 61%, 0.2);
+		--dm-text: #f2f2f5;
+		--dm-text-strong: #fff;
+		--dm-text-muted: #ababb3;
+		--dm-text-link: #00b0f4;
+		--dm-interactive-normal: #b5b8bd;
+		--dm-interactive-hover: #dbdee1;
+		--dm-interactive-active: #fff;
+		--dm-border-normal: hsla(240, 4%, 61%, 0.2);
+		--dm-border-subtle: hsla(240, 4%, 61%, 0.12);
+		--dm-border-strong: hsla(240, 4%, 61%, 0.44);
+		--dm-shadow-outline: rgb(255 255 255 / 0.08);
+		--dm-amber: #f7a300;
+		--dm-status-online: #24a659;
+		--dm-status-idle: #ffcc6e;
+		--dm-status-dnd: #db4247;
+		--dm-status-offline: #9e9ea6;
+		--dm-scrollbar-thumb: #757880;
+		--dm-badge: #d93d45;
+	}
+
+	html {
+		font-family: var(--dm-font-primary);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	body {
+		background: var(--dm-bg-tertiary);
+		color: var(--dm-text);
+	}
+}
