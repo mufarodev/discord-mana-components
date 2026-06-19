@@ -30,3 +30,5 @@ export * as SegmentedControl from './components/segmented-control';
 export * as Tabs from './components/tabs';
 
 export * as ScrollArea from './components/scroll-area';
+
+export * as ChatMessageRow from './components/chat-message-row';
