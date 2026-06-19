@@ -22,3 +22,5 @@ export { Switch as SwitchRoot } from './components/switch';
 export type { SwitchProps } from './components/switch';
 
 export * as Tooltip from './components/tooltip';
+
+export * as Select from './components/select';
