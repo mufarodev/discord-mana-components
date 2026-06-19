@@ -8,3 +8,7 @@ export * as Dialog from './components/dialog';
 export * as Input from './components/input';
 export { Input as InputRoot, inputVariants } from './components/input';
 export type { InputProps, InputState } from './components/input';
+
+export * as Textarea from './components/textarea';
+export { Textarea as TextareaRoot, textareaVariants } from './components/textarea';
+export type { TextareaProps, TextareaState } from './components/textarea';
