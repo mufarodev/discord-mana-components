@@ -16,3 +16,7 @@ export type { TextareaProps, TextareaState } from './components/textarea';
 export * as Checkbox from './components/checkbox';
 export { Checkbox as CheckboxRoot, checkboxVariants } from './components/checkbox';
 export type { CheckboxProps } from './components/checkbox';
+
+export * as Switch from './components/switch';
+export { Switch as SwitchRoot } from './components/switch';
+export type { SwitchProps } from './components/switch';
