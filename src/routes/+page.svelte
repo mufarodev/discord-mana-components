@@ -127,7 +127,7 @@
 						
 						<div class="flex items-center gap-4">
 							<span class="text-sm font-semibold">Dropdown Select:</span>
-							<Select bind:value={selectValue} items={selectItems}>
+										<Select type="single" bind:value={selectValue} items={selectItems}>
 								<SelectTrigger class="w-48">
 									<SelectValue placeholder="Theme" />
 								</SelectTrigger>
