@@ -12,3 +12,7 @@ export type { InputProps, InputState } from './components/input';
 export * as Textarea from './components/textarea';
 export { Textarea as TextareaRoot, textareaVariants } from './components/textarea';
 export type { TextareaProps, TextareaState } from './components/textarea';
+
+export * as Checkbox from './components/checkbox';
+export { Checkbox as CheckboxRoot, checkboxVariants } from './components/checkbox';
+export type { CheckboxProps } from './components/checkbox';
