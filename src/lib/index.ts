@@ -28,3 +28,5 @@ export * as Select from './components/select';
 export * as SegmentedControl from './components/segmented-control';
 
 export * as Tabs from './components/tabs';
+
+export * as ScrollArea from './components/scroll-area';
