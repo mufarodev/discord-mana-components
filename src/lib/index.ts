@@ -26,3 +26,5 @@ export * as Tooltip from './components/tooltip';
 export * as Select from './components/select';
 
 export * as SegmentedControl from './components/segmented-control';
+
+export * as Tabs from './components/tabs';
