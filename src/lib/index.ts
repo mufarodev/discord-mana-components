@@ -20,3 +20,5 @@ export type { CheckboxProps } from './components/checkbox';
 export * as Switch from './components/switch';
 export { Switch as SwitchRoot } from './components/switch';
 export type { SwitchProps } from './components/switch';
+
+export * as Tooltip from './components/tooltip';
