@@ -24,3 +24,5 @@ export type { SwitchProps } from './components/switch';
 export * as Tooltip from './components/tooltip';
 
 export * as Select from './components/select';
+
+export * as SegmentedControl from './components/segmented-control';
