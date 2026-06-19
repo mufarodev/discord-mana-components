@@ -40,3 +40,5 @@ export * as MessageEmbed from './components/message-embed';
 export * as Avatar from './components/avatar';
 
 export * as ChannelListItem from './components/channel-list-item';
+
+export * as NotificationBadge from './components/notification-badge';
