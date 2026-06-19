@@ -36,3 +36,5 @@ export * as ChatMessageRow from './components/chat-message-row';
 export * as MessageReaction from './components/message-reaction';
 
 export * as MessageEmbed from './components/message-embed';
+
+export * as Avatar from './components/avatar';
