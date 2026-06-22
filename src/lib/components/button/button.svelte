@@ -25,7 +25,7 @@
 			},
 			static: {
 				true: '',
-				false: 'active:scale-[0.96]'
+				false: ''
 			}
 		},
 		defaultVariants: {
