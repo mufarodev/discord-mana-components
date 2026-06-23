@@ -11,6 +11,6 @@
 
 <DialogPrimitive.Title
 	bind:ref
-	class={cn('text-xl font-bold leading-5 text-dm-text-strong', className)}
+	class={cn('text-[20px] font-semibold leading-[1.2] text-dm-text-strong break-words [overflow-wrap:break-word] [word-break:break-word]', className)}
 	{...restProps}
 />
