@@ -86,8 +86,8 @@
 						<Button variant="link" size="medium">Link style</Button>
 						<Button variant="blank" size="medium" class="text-dm-brand font-semibold hover:underline">Blank style</Button>
 						<Button variant="primary" size="medium" loading>Loading State</Button>
-						<Button variant="outline" size="medium" loading={isButtonLoading} onclick={triggerLoadingAction}>
-							{isButtonLoading ? "Processing..." : "Trigger 3s Loading"}
+						<Button variant="primary" size="medium" loading={isButtonLoading} onclick={triggerLoadingAction}>
+							Trigger 3s Loading
 						</Button>
 					</div>
 				</div>
@@ -135,7 +135,7 @@
 							<Switch bind:checked={switchChecked} />
 						</div>
 						<Checkbox variant="row" bind:checked={checkboxRow}>Row checkbox container (Highlights on select)</Checkbox>
-						
+
 						<div class="flex items-center gap-4">
 							<span class="text-sm font-semibold">Dropdown Select:</span>
 										<Select type="single" bind:value={selectValue} items={selectItems}>
