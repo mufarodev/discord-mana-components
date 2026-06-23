@@ -11,9 +11,11 @@
 		base: 'fixed top-1/2 left-1/2 z-50 flex flex-col -translate-x-1/2 -translate-y-1/2 bg-dm-bg-primary border border-dm-border-normal rounded-lg shadow-dm-elevated outline-none max-h-[90vh] overflow-hidden',
 		variants: {
 			size: {
-				small: 'max-h-[720px] min-h-[220px] w-[442px]',
-				medium: 'max-h-[800px] min-h-[400px] w-[602px]',
-				large: 'min-h-[400px] max-w-[962px] min-w-[800px] w-full'
+				small: 'max-h-[min(720px,100%)] w-full max-w-[400px]',
+				medium: 'max-h-[min(800px,100%)] w-full max-w-[480px]',
+				large: 'w-full max-w-[680px]',
+				xlarge: 'w-full max-w-[960px]',
+				xxlarge: 'w-full max-w-[1280px]'
 			}
 		},
 		defaultVariants: {
@@ -140,6 +142,7 @@
 	<DialogOverlay />
 	<DialogPrimitive.Content
 		bind:ref
+		forceMount={true}
 		{...restProps}
 	>
 		{#snippet child({ props })}
