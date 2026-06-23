@@ -68,7 +68,7 @@
 	<a
 		bind:this={ref}
 		data-mana-component="button"
-		class={cn(buttonVariants({ variant, size, static: isStatic }), className)}
+		class={cn(buttonVariants({ variant, size, static: isStatic }), loading && "pointer-events-none", className)}
 		href={(disabled || loading) ? undefined : href}
 		aria-disabled={disabled || loading}
 		role={(disabled || loading) ? 'link' : undefined}
@@ -90,9 +90,10 @@
 	<button
 		bind:this={ref}
 		data-mana-component="button"
-		class={cn(buttonVariants({ variant, size, static: isStatic }), className)}
+		class={cn(buttonVariants({ variant, size, static: isStatic }), loading && "pointer-events-none", className)}
 		{type}
-		disabled={disabled || loading}
+		{disabled}
+		aria-disabled={disabled || loading ? "true" : undefined}
 		{...restProps}
 	>
 		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200 ease-out", loading ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0")}>
