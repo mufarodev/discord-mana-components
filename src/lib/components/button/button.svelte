@@ -49,6 +49,8 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let {
 		class: className,
 		variant = 'primary',
@@ -62,6 +64,82 @@
 		children,
 		...restProps
 	}: ButtonProps = $props();
+
+	let reducedMotion = $state(false);
+
+	onMount(() => {
+		const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+		reducedMotion = mediaQuery.matches;
+		const listener = (e: MediaQueryListEvent) => {
+			reducedMotion = e.matches;
+		};
+		mediaQuery.addEventListener('change', listener);
+		return () => mediaQuery.removeEventListener('change', listener);
+	});
+
+	function textEnter(node: HTMLElement) {
+		return {
+			duration: 200,
+			css: (t: number) => {
+				if (reducedMotion) {
+					return `opacity: ${t};`;
+				}
+				const translateY = (1 - t) * -100;
+				return `
+					opacity: ${t};
+					transform: translateY(${translateY}%);
+				`;
+			}
+		};
+	}
+
+	function textExit(node: HTMLElement) {
+		return {
+			duration: 200,
+			css: (t: number) => {
+				if (reducedMotion) {
+					return `opacity: ${t};`;
+				}
+				const translateY = (1 - t) * -100;
+				return `
+					opacity: ${t};
+					transform: translateY(${translateY}%);
+				`;
+			}
+		};
+	}
+
+	function spinnerEnter(node: HTMLElement) {
+		return {
+			duration: 200,
+			css: (t: number) => {
+				if (reducedMotion) {
+					return `opacity: ${t};`;
+				}
+				const translateY = (1 - t) * 100;
+				return `
+					opacity: ${t};
+					transform: translateY(${translateY}%);
+				`;
+			}
+		};
+	}
+
+	function spinnerExit(node: HTMLElement) {
+		return {
+			duration: 200,
+			css: (t: number) => {
+				if (reducedMotion) {
+					return `opacity: ${t};`;
+				}
+				const translateY = (1 - t) * 100;
+				return `
+					opacity: ${t};
+					transform: translateY(${translateY}%);
+				`;
+			}
+		};
+	}
 </script>
 
 {#if href}
@@ -75,16 +153,34 @@
 		tabindex={(disabled || loading) ? -1 : undefined}
 		{...restProps}
 	>
-		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200 ease-out", loading ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0")}>
+		<!-- Invisible spacer to guarantee button size remains identical always -->
+		<span class="invisible flex items-center justify-center gap-1 w-full h-full pointer-events-none select-none">
 			{@render children?.()}
 		</span>
-		<span class={cn("absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200 ease-out", loading ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full")}>
-			<span class="inline-flex items-center gap-[2px]">
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+		
+		{#if !loading}
+			<span 
+				class="absolute inset-0 flex items-center justify-center gap-1 w-full h-full"
+				in:textEnter
+				out:textExit
+			>
+				{@render children?.()}
 			</span>
-		</span>
+		{/if}
+
+		{#if loading}
+			<span 
+				class="absolute inset-0 flex items-center justify-center pointer-events-none"
+				in:spinnerEnter
+				out:spinnerExit
+			>
+				<span class="inline-flex items-center gap-[2px]">
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+				</span>
+			</span>
+		{/if}
 	</a>
 {:else}
 	<button
@@ -96,15 +192,33 @@
 		aria-disabled={disabled || loading ? "true" : undefined}
 		{...restProps}
 	>
-		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200 ease-out", loading ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0")}>
+		<!-- Invisible spacer to guarantee button size remains identical always -->
+		<span class="invisible flex items-center justify-center gap-1 w-full h-full pointer-events-none select-none">
 			{@render children?.()}
 		</span>
-		<span class={cn("absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200 ease-out", loading ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full")}>
-			<span class="inline-flex items-center gap-[2px]">
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
-				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+
+		{#if !loading}
+			<span 
+				class="absolute inset-0 flex items-center justify-center gap-1 w-full h-full"
+				in:textEnter
+				out:textExit
+			>
+				{@render children?.()}
 			</span>
-		</span>
+		{/if}
+
+		{#if loading}
+			<span 
+				class="absolute inset-0 flex items-center justify-center pointer-events-none"
+				in:spinnerEnter
+				out:spinnerExit
+			>
+				<span class="inline-flex items-center gap-[2px]">
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+				</span>
+			</span>
+		{/if}
 	</button>
 {/if}
