@@ -47,6 +47,18 @@
 	--font-dm-code: var(--dm-font-code);
 	--shadow-dm-elevated: inset 0 0 0 1px var(--dm-shadow-outline), 0 8px 16px rgb(0 0 0 / 0.24);
 	--shadow-dm-surface: 0 0 0 1px var(--dm-border-subtle);
+	--animate-spinner-pulse: spinner-pulse 1.4s ease-in-out infinite;
+
+	@keyframes spinner-pulse {
+		0%, 100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 0.3;
+			transform: scale(0.8);
+		}
+	}
 }
 
 @layer base {
