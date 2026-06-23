@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { toggleMode, mode } from 'mode-watcher';
 	import { Button } from '$lib/components/button';
-	import { Dialog, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription } from '$lib/components/dialog';
+	import { Dialog, DialogContent, DialogHeader, DialogBody, DialogFooter, DialogTitle, DialogDescription } from '$lib/components/dialog';
 	import { Input } from '$lib/components/input';
 	import { Textarea } from '$lib/components/textarea';
 	import { Checkbox } from '$lib/components/checkbox';
@@ -18,6 +18,7 @@
 	import { ChannelListItem } from '$lib/components/channel-list-item';
 	import { NotificationBadge } from '$lib/components/notification-badge';
 	import { Typography } from '$lib/components/typography';
+	import { Label } from '$lib/components/label';
 
 	let isDialogOpen = $state(false);
 	let isButtonLoading = $state(false);
@@ -98,17 +99,41 @@
 					<div>
 						<Button variant="primary" onclick={() => isDialogOpen = true}>Open Discord-style Modal</Button>
 						<Dialog bind:open={isDialogOpen}>
-							<DialogContent size="medium">
-								<DialogHeader>
-									<DialogTitle>System Action Alert</DialogTitle>
-									<DialogDescription>Proceeding will purge all local guild cached memory permanently. This cannot be undone.</DialogDescription>
-								</DialogHeader>
-								<div class="p-6">
-									<Typography variant="body-sm">The purge is irreversible and takes approximately 15 seconds to run.</Typography>
-								</div>
-								<DialogFooter>
-									<Button variant="outline" onclick={() => isDialogOpen = false}>Cancel</Button>
-									<Button variant="danger" onclick={() => isDialogOpen = false}>Purge Cache</Button>
+							<DialogContent size="medium" paddingSize="sm">
+								<DialogHeader
+									title="Update your password"
+									subtitle="Enter your current password and a new password."
+								/>
+								<DialogBody>
+									<div class="flex flex-col gap-5">
+										<div class="flex flex-col">
+											<!-- svelte-ignore a11y_label_has_associated_control -->
+											<Label for="current-password">
+												Current Password <span class="text-dm-red">*</span>
+											</Label>
+											<Input id="current-password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+										</div>
+
+										<div class="flex flex-col">
+											<!-- svelte-ignore a11y_label_has_associated_control -->
+											<Label for="new-password">
+												New Password <span class="text-dm-red">*</span>
+											</Label>
+											<Input id="new-password" type="password" autocomplete="new-password" placeholder="••••••••" required />
+										</div>
+
+										<div class="flex flex-col">
+											<!-- svelte-ignore a11y_label_has_associated_control -->
+											<Label for="confirm-password">
+												Confirm New Password <span class="text-dm-red">*</span>
+											</Label>
+											<Input id="confirm-password" type="password" autocomplete="new-password" placeholder="••••••••" required />
+										</div>
+									</div>
+								</DialogBody>
+								<DialogFooter trailingFullWidth>
+									<Button variant="secondary" onclick={() => isDialogOpen = false}>Cancel</Button>
+									<Button variant="primary" onclick={() => isDialogOpen = false}>Done</Button>
 								</DialogFooter>
 							</DialogContent>
 						</Dialog>

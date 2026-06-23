@@ -44,3 +44,6 @@ export * as ChannelListItem from './components/channel-list-item';
 export * as NotificationBadge from './components/notification-badge';
 
 export * as Typography from './components/typography';
+
+export * as Label from './components/label';
+export { Label as LabelRoot } from './components/label';
