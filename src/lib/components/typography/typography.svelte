@@ -7,15 +7,15 @@
 		base: 'font-dm-primary leading-normal',
 		variants: {
 			variant: {
-				h1: 'font-dm-display text-[32px] font-bold md:font-extrabold leading-[1.25] text-dm-text-strong',
-				h2: 'font-dm-display text-[24px] font-bold leading-[1.25] text-dm-text-strong',
-				h3: 'font-dm-display text-[20px] font-semibold leading-[1.2] text-dm-text-strong',
-				h4: 'font-dm-display text-[16px] font-semibold leading-[1.25] text-dm-text-strong',
-				eyebrow: 'text-[12px] font-bold uppercase tracking-[0.02em] leading-[1.33] text-dm-text-muted',
+				h1: 'font-dm-display text-[32px] font-bold leading-[1.25] text-dm-text-strong',
+				h2: 'font-dm-display text-[24px] font-semibold leading-[1.25] text-dm-text-strong',
+				h3: 'font-dm-display text-[20px] font-medium leading-[1.2] text-dm-text-strong',
+				h4: 'font-dm-display text-[16px] font-medium leading-[1.25] text-dm-text-strong',
+				eyebrow: 'text-[12px] font-semibold uppercase tracking-[0.02em] leading-[1.33] text-dm-text-muted',
 				'body-md': 'text-[16px] font-normal leading-[1.25] text-dm-text',
 				'body-sm': 'text-[14px] font-normal leading-[1.28] text-dm-text',
 				'body-xs': 'text-[12px] font-normal leading-[1.33] text-dm-text-muted',
-				code: 'font-dm-code text-[12px] font-bold leading-[1.33] bg-dm-bg-secondary px-1 py-0.5 rounded border border-solid border-dm-border-subtle text-dm-text-strong'
+				code: 'font-dm-code text-[12px] font-normal leading-[1.33] bg-dm-bg-secondary px-1 py-0.5 rounded border border-solid border-dm-border-subtle text-dm-text-strong'
 			}
 		},
 		defaultVariants: {
