@@ -73,7 +73,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<!-- Card 1: Buttons -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">1. Buttons</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">1. Buttons</Typography>
 					<div class="flex flex-wrap gap-3">
 						<Button variant="primary" size="medium">Primary</Button>
 						<Button variant="secondary" size="medium">Secondary</Button>
@@ -94,7 +94,7 @@
 
 				<!-- Card 2: Modals / Dialog -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">2. Modals</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">2. Modals</Typography>
 					<div>
 						<Button variant="primary" onclick={() => isDialogOpen = true}>Open Discord-style Modal</Button>
 						<Dialog bind:open={isDialogOpen}>
@@ -117,7 +117,7 @@
 
 				<!-- Card 3: Inputs & Textarea -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">3. Text Fields</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">3. Text Fields</Typography>
 					<div class="flex flex-col gap-3">
 						<Input placeholder="Standard text input field..." bind:value={inputValue} />
 						<Input placeholder="Success state input field..." state="success" />
@@ -128,7 +128,7 @@
 
 				<!-- Card 4: Selection & Toggles -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">4. Selection & Toggles</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">4. Selection & Toggles</Typography>
 					<div class="flex flex-col gap-4">
 						<div class="flex items-center gap-6">
 							<Checkbox bind:checked={checkboxInline}>Inline Checklist</Checkbox>
@@ -163,7 +163,7 @@
 
 				<!-- Card 5: Tooltips & Badges -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">5. Tooltips & Badges</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">5. Tooltips & Badges</Typography>
 					<div class="flex items-center gap-6">
 						<Tooltip>
 							<TooltipTrigger class="outline-none">
@@ -183,7 +183,7 @@
 
 				<!-- Card 6: Avatars & Status -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">6. Avatars & Statuses</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">6. Avatars & Statuses</Typography>
 					<div class="flex flex-wrap items-center gap-4">
 						<Avatar size={16} status="online" fallback="US" />
 						<Avatar size={24} status="idle" fallback="A1" />
@@ -195,7 +195,7 @@
 
 				<!-- Card 7: Channel List Items -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">7. Channel List Items</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">7. Channel List Items</Typography>
 					<div class="flex flex-col gap-1 p-2 bg-dm-bg-secondary rounded border border-solid border-dm-border-subtle">
 						<ChannelListItem name="TEXT CHANNELS" type="category" />
 						<ChannelListItem name="general" type="text" state="selected" />
@@ -207,7 +207,7 @@
 
 				<!-- Card 8: Tab Bar & Scrollbars -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">8. Tab Bar & ScrollArea</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">8. Tab Bar & ScrollArea</Typography>
 					<div class="flex flex-col gap-3">
 						<Tabs bind:value={activeTab}>
 							<TabsList>
@@ -252,7 +252,7 @@
 
 				<!-- Card 9: Typography scale -->
 				<div class="flex flex-col gap-4 p-6 bg-dm-bg-primary rounded-lg border border-solid border-dm-border-subtle shadow-dm-surface md:col-span-2">
-					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5 font-bold">9. Typography scale</Typography>
+					<Typography variant="h3" class="border-b border-solid border-dm-border-subtle pb-1.5">9. Typography scale</Typography>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<div class="flex flex-col gap-3">
 							<Typography variant="h1">Header XXL (32px)</Typography>
