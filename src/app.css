@@ -44,6 +44,8 @@
 	--color-dm-badge: var(--dm-badge);
 	--font-dm-display: var(--dm-font-display);
 	--font-dm-primary: var(--dm-font-primary);
+	--font-dm-medium: var(--dm-font-medium);
+	--font-dm-semibold: var(--dm-font-semibold);
 	--font-dm-code: var(--dm-font-code);
 	--shadow-dm-elevated: inset 0 0 0 1px var(--dm-shadow-outline), 0 8px 16px rgb(0 0 0 / 0.24);
 	--shadow-dm-surface: 0 0 0 1px var(--dm-border-subtle);
@@ -101,7 +103,9 @@
 		--dm-scrollbar-thumb: #8c8c94;
 		--dm-badge: #d12e38;
 		--dm-font-display: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		--dm-font-primary: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--dm-font-primary: "gg sans Normal", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--dm-font-medium: "gg sans Medium", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		--dm-font-semibold: "gg sans SemiBold", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		--dm-font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", Monaco, monospace;
 	}
 
