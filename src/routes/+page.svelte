@@ -20,6 +20,13 @@
 	import { Typography } from '$lib/components/typography';
 
 	let isDialogOpen = $state(false);
+	let isButtonLoading = $state(false);
+	function triggerLoadingAction() {
+		isButtonLoading = true;
+		setTimeout(() => {
+			isButtonLoading = false;
+		}, 3000);
+	}
 	let inputValue = $state('');
 	let textareaValue = $state('');
 	let checkboxInline = $state(false);
@@ -78,6 +85,10 @@
 						<Button variant="outline-success" size="medium">Outline Success</Button>
 						<Button variant="link" size="medium">Link style</Button>
 						<Button variant="blank" size="medium" class="text-dm-brand font-semibold hover:underline">Blank style</Button>
+						<Button variant="primary" size="medium" loading>Loading State</Button>
+						<Button variant="outline" size="medium" loading={isButtonLoading} onclick={triggerLoadingAction}>
+							{isButtonLoading ? "Processing..." : "Trigger 3s Loading"}
+						</Button>
 					</div>
 				</div>
 

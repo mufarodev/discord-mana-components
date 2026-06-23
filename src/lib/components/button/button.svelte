@@ -44,6 +44,7 @@
 			variant?: ButtonVariant;
 			size?: ButtonSize;
 			static?: ButtonStatic;
+			loading?: boolean;
 		};
 </script>
 
@@ -53,6 +54,7 @@
 		variant = 'primary',
 		size = 'medium',
 		static: isStatic = false,
+		loading = false,
 		ref = $bindable(null),
 		href = undefined,
 		type = 'button',
@@ -65,25 +67,47 @@
 {#if href}
 	<a
 		bind:this={ref}
-		data-slot="button"
+		data-mana-component="button"
 		class={cn(buttonVariants({ variant, size, static: isStatic }), className)}
-		href={disabled ? undefined : href}
-		aria-disabled={disabled}
-		role={disabled ? 'link' : undefined}
-		tabindex={disabled ? -1 : undefined}
+		href={(disabled || loading) ? undefined : href}
+		aria-disabled={disabled || loading}
+		role={(disabled || loading) ? 'link' : undefined}
+		tabindex={(disabled || loading) ? -1 : undefined}
 		{...restProps}
 	>
-		{@render children?.()}
+		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200", loading && "opacity-0 -translate-y-full")}>
+			{@render children?.()}
+		</span>
+		{#if loading}
+			<span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+				<span class="inline-flex items-center gap-[2px]">
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+				</span>
+			</span>
+		{/if}
 	</a>
 {:else}
 	<button
 		bind:this={ref}
-		data-slot="button"
+		data-mana-component="button"
 		class={cn(buttonVariants({ variant, size, static: isStatic }), className)}
 		{type}
-		{disabled}
+		disabled={disabled || loading}
 		{...restProps}
 	>
-		{@render children?.()}
+		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200", loading && "opacity-0 -translate-y-full")}>
+			{@render children?.()}
+		</span>
+		{#if loading}
+			<span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+				<span class="inline-flex items-center gap-[2px]">
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
+				</span>
+			</span>
+		{/if}
 	</button>
 {/if}
