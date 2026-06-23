@@ -12,6 +12,7 @@
 
 <DialogPrimitive.Overlay
 	bind:ref
+	forceMount={true}
 	{...restProps}
 >
 	{#snippet child({ props })}
