@@ -75,18 +75,16 @@
 		tabindex={(disabled || loading) ? -1 : undefined}
 		{...restProps}
 	>
-		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200", loading && "opacity-0 -translate-y-full")}>
+		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200 ease-out", loading ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0")}>
 			{@render children?.()}
 		</span>
-		{#if loading}
-			<span class="absolute inset-0 flex items-center justify-center pointer-events-none">
-				<span class="inline-flex items-center gap-[2px]">
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
-				</span>
+		<span class={cn("absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200 ease-out", loading ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full")}>
+			<span class="inline-flex items-center gap-[2px]">
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
 			</span>
-		{/if}
+		</span>
 	</a>
 {:else}
 	<button
@@ -97,17 +95,15 @@
 		disabled={disabled || loading}
 		{...restProps}
 	>
-		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200", loading && "opacity-0 -translate-y-full")}>
+		<span class={cn("flex items-center justify-center gap-1 w-full h-full transition-all duration-200 ease-out", loading ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0")}>
 			{@render children?.()}
 		</span>
-		{#if loading}
-			<span class="absolute inset-0 flex items-center justify-center pointer-events-none">
-				<span class="inline-flex items-center gap-[2px]">
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
-					<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
-				</span>
+		<span class={cn("absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200 ease-out", loading ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full")}>
+			<span class="inline-flex items-center gap-[2px]">
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse"></span>
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.2s]"></span>
+				<span class="h-[6px] w-[6px] rounded-full bg-current animate-spinner-pulse [animation-delay:0.4s]"></span>
 			</span>
-		{/if}
+		</span>
 	</button>
 {/if}
