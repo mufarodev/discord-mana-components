@@ -1,13 +1,4 @@
-import Root, { type SegmentedControlProps } from './segmented-control.svelte';
-import Item, { type SegmentedControlItemProps, segmentedControlItemVariants } from './segmented-control-item.svelte';
+import Root from "./segmented-control.svelte";
+import Item from "./segmented-control-item.svelte";
 
-export {
-	Root,
-	Item,
-	// Aliases
-	Root as SegmentedControl,
-	Item as SegmentedControlItem,
-	segmentedControlItemVariants,
-	type SegmentedControlProps,
-	type SegmentedControlItemProps
-};
+export { Root, Item, Root as SegmentedControl, Item as SegmentedControlItem };

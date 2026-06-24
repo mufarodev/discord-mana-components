@@ -1,7 +1,3 @@
-import Root, { type MessageEmbedProps } from './message-embed.svelte';
+import Root from "./message-embed.svelte";
 
-export {
-	Root,
-	Root as MessageEmbed,
-	type MessageEmbedProps
-};
+export { Root, Root as MessageEmbed };

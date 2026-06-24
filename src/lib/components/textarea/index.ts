@@ -1,9 +1,3 @@
-import Root, { textareaVariants, type TextareaProps, type TextareaState } from './textarea.svelte';
+import Root from "./textarea.svelte";
 
-export {
-	Root,
-	Root as Textarea,
-	textareaVariants,
-	type TextareaProps,
-	type TextareaState
-};
+export { Root, Root as Textarea };
