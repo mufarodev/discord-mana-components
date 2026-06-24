@@ -104,6 +104,35 @@
       opacity: 0;
     }
   }
+
+  @keyframes dot-grow {
+    0%   { opacity: 1; transform: scale(1); }
+    25%  { opacity: 1; transform: scale(3); }
+    26%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes dot-shrink {
+    0%   { opacity: 0; transform: scale(2); }
+    25%  { opacity: 0; transform: scale(2); }
+    26%  { opacity: 1; transform: scale(2); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes check-draw {
+    0%   { opacity: 0; transform: scale(0.7); }
+    25%  { opacity: 0; transform: scale(0.7); }
+    26%  { opacity: 1; transform: scale(0.7); }
+    75%  { transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes check-undraw {
+    0%   { opacity: 1; transform: scale(1); }
+    25%  { opacity: 1; transform: scale(0.7); }
+    26%  { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 0; transform: scale(0.7); }
+  }
 }
 
 @layer base {
@@ -302,4 +331,20 @@
     background: var(--dm-bg-tertiary);
     color: var(--dm-text);
   }
+}
+
+.animateIn .dot-morph {
+  animation: dot-grow 0.3s cubic-bezier(0.65, 0, 0.83, 0.83) forwards;
+}
+
+.animateIn .check-morph {
+  animation: check-draw 0.3s cubic-bezier(0.65, 0, 0.83, 0.83) both;
+}
+
+.animateOut .dot-morph {
+  animation: dot-shrink 0.12s cubic-bezier(0.65, 0, 0.83, 0.84) backwards;
+}
+
+.animateOut .check-morph {
+  animation: check-undraw 0.12s cubic-bezier(0.65, 0, 0.83, 0.84) backwards;
 }
