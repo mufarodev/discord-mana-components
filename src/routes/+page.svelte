@@ -305,11 +305,26 @@
                         >4. Selection & Toggles</Typography
                     >
                     <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-6">
+                        <div class="flex flex-wrap items-center gap-6">
                             <Checkbox bind:checked={checkboxInline}
                                 >Inline Checklist</Checkbox
                             >
-                            <Switch bind:checked={switchChecked} />
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold">Switch:</span>
+                                <Switch bind:checked={switchChecked} />
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold">Icon Switch:</span>
+                                <Switch bind:checked={switchChecked} hasIcon />
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold">Disabled OFF:</span>
+                                <Switch checked={false} disabled />
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold">Disabled ON:</span>
+                                <Switch checked={true} disabled hasIcon />
+                            </div>
                         </div>
                         <Checkbox variant="row" bind:checked={checkboxRow}
                             >Row checkbox container (Highlights on select)</Checkbox
