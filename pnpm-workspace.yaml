@@ -1,10 +1,13 @@
+# pnpm-workspace.yaml
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: 4.1.9
   vite-plus: latest
+
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
+
 peerDependencyRules:
   allowAny:
     - vite
@@ -12,7 +15,22 @@ peerDependencyRules:
   allowedVersions:
     vite: "*"
     vitest: "*"
+
 onlyBuiltDependencies:
   - esbuild
   - sharp
   - workerd
+
+supportedArchitectures:
+  os:
+    - current
+    - linux
+    - win32
+  cpu:
+    - current
+    - x64
+  libc:
+    - glibc
+
+publicHoistPattern:
+  - "*@voidzero-dev/vite-plus-*"
