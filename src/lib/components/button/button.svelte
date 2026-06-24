@@ -243,7 +243,7 @@
                 in:spinnerEnter
                 out:spinnerExit
             >
-                <span class="inline-flex items-center gap">
+                <span class="inline-flex items-center gap-0.5">
                     <span
                         class="size-1.5 rounded-full bg-current animate-spinner-pulse"
                     ></span>
