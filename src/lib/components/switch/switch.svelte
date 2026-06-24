@@ -65,9 +65,15 @@
 	let rectHeight = $derived(
 		getRectProp("height", ea.current, turningOn, reducedMotion),
 	);
-	let rectRx = $derived(getRectProp("rx", ea.current, turningOn, reducedMotion));
-	let rectX = $derived(getRectProp("x", ea.current, turningOn, reducedMotion));
-	let rectY = $derived(getRectProp("y", ea.current, turningOn, reducedMotion));
+	let rectRx = $derived(
+		getRectProp("rx", ea.current, turningOn, reducedMotion),
+	);
+	let rectX = $derived(
+		getRectProp("x", ea.current, turningOn, reducedMotion),
+	);
+	let rectY = $derived(
+		getRectProp("y", ea.current, turningOn, reducedMotion),
+	);
 
 	let thumbLeft = $derived(
 		reducedMotion
