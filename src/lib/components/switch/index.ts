@@ -1,7 +1,3 @@
-import Root, { type SwitchProps } from './switch.svelte';
+import Root from "./switch.svelte";
 
-export {
-	Root,
-	Root as Switch,
-	type SwitchProps
-};
+export { Root, Root as Switch };

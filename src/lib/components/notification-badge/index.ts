@@ -1,8 +1,3 @@
-import Root, { badgeVariants, type NotificationBadgeProps } from './notification-badge.svelte';
+import Root from "./notification-badge.svelte";
 
-export {
-	Root,
-	Root as NotificationBadge,
-	badgeVariants,
-	type NotificationBadgeProps
-};
+export { Root, Root as NotificationBadge };

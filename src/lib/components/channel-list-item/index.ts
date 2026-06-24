@@ -1,8 +1,3 @@
-import Root, { type ChannelListItemProps, channelVariants } from './channel-list-item.svelte';
+import Root from "./channel-list-item.svelte";
 
-export {
-	Root,
-	Root as ChannelListItem,
-	channelVariants,
-	type ChannelListItemProps
-};
+export { Root, Root as ChannelListItem };

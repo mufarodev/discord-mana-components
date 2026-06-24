@@ -1,8 +1,3 @@
-import Root, { type MessageReactionProps, reactionVariants } from './message-reaction.svelte';
+import Root from "./message-reaction.svelte";
 
-export {
-	Root,
-	Root as MessageReaction,
-	reactionVariants,
-	type MessageReactionProps
-};
+export { Root, Root as MessageReaction };
